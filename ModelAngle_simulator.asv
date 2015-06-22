@@ -1,35 +1,38 @@
 clc; clear all; close all;
 
 
-% dirName = 'C:\Users\William\Dropbox\Code_Exoskeleton\1-ExperimentStep\Data\Data-2015-5-17-William\';
-% filename_downStair = 'downstair\William-downstair_20150517.model';
-% filename_upStair  = 'upstair\William-upstair_20150517.model';
-% filename_walking = 'walking\William-walking_20150517.model';
-% filename_walking_fast = 'walking_fast\William-walking_fast.model';
+dirName = 'C:\Users\William\Dropbox\Code_Exoskeleton\1-ExperimentStep\Data\Data-2015-5-17-William\';
+filename_downStair = 'downstair\William-downstair_20150517.model';
+filename_yStair  = 'upstair\William-upstair_20150517.model';
+filename_walking = 'walking\William-walking_20150517.model';
+filename_walking_fast = 'walking_fast\William-walking_fast.model';
 
-dirName = 'C:\Users\William\Dropbox\Code_Exoskeleton\1-ExperimentStep\Data\Data-2015-5-27-HCC\';
-filename_downStair = 'down\HCC-down_20150527.model';
-filename_upStair  = 'up\HCC-up_20150527.model';
-filename_walking = 'walking\HCC-walking_20150527.model';
-
+% dirName = 'C:\Users\William\Dropbox\Code_Exoskeleton\1-ExperimentStep\Data\Data-2015-5-27-HCC\';
+% % filename_downStair = 'downstair\William-downstair_20150517.model';
+% % filename_yStair  = 'upstair\William-upstair_20150517.model';
+% filename_walking = 'walking\HCC-walking_20150527.model';
+% % filename_walking_fast = 'walking_fast\William-walking_fast.model';
 
 data_downStair = load([dirName filename_downStair]);
-data_upStair  = load([dirName filename_upStair]);
+data_upStair  = load([dirName filename_yStair]);
 data_walking = load([dirName filename_walking]);
-% data_walking_fast = load([dirName filename_walking_fast]);
+data_walking_fast = load([dirName filename_walking_fast]);
 
 
 number = 100;
 
 DDNum = 4;
+% data = data_downStair(1:number:10000,DDNum);
+% data = data_upStair(1:number:10000,DDNum);
+% data = data_walking_fast(1:number:10000,DDNum);
 data = data_downStair;
 data = data(1:number:10000,:);
 totalNum = size(data,1);
 
 %% Hip parameter
-sin_x = 74;
-sin_y = 30;
-sin_amp = 45;
+sin_x = 0;
+sin_y = 16.5;
+sin_amp = 25;
 gauss_x = 20;
 gauss_y = 0;
 gauss_amp = 10;
@@ -60,10 +63,10 @@ ylabel('Angle (degree)', 'fontsize',12);
 
 
 %% parameter
-sin_x = 69;
+sin_x = 75;
 sin_y = 30;
-sin_amp = 91;
-gauss_x = 74;
+sin_amp = 74;
+gauss_x = 70;
 gauss_y = 20;
 gauss_amp = 53;
 gauss_sig = 20;

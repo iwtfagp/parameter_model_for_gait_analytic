@@ -1,10 +1,12 @@
 clc; clear all; close all;
 
 dir = 'C:\Users\William\Dropbox\Code_Exoskeleton\1-ExperimentStep\Data\Data-2015-5-17-William'
+dir='C:\Users\William\Dropbox\Code_Exoskeleton\1-ExperimentStep\Data\Data-2015-4-15-William\sitting\STANDING\'
 % fileName = '\walking\William-walking_20150517.model'
 % fileName = '\walking_fast\William-walking_fast.model'
 % fileName = '\upstair\William-upstair_20150517.model'
-fileName = '\downstair\William-downstair_20150517.model'
+% fileName = '\downstair\William-downstair_20150517.model'
+fileName ='William_sitting.model';
 fileName = [dir fileName];
 data = load(fileName);
 
